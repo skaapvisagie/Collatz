@@ -5,12 +5,12 @@
     Date: 26/07/2018
 
 */
-#include "main.h"
-#inculde <stdio.h>
+//#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 //========== init functions ===================
-int Find_Collatz(int val);
+int Find_Collatz(int c);
 //=============================================
 
 //========== Global Variables =================
@@ -21,7 +21,7 @@ int main()
 {
    int C;
 
-   scanf(“%d”,&C);
+   scanf("%d",&C);
 
     while(C != 1)
     {
@@ -36,12 +36,12 @@ int Find_Collatz(int c)
 {
     if((c%2) == 0) //check if the current number is even of odd
     {
-        val=val/2;
+        c=c/2;
     }else
      {
-        val=3*val+1;
+        c=3*c+1;
      }
 
    //cnt++;
-   return val;
+   return c;
 }
