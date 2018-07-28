@@ -1,0 +1,9 @@
+In this folder are two programs that calculate the Collazt sequence written in C for Uman interview test.
+
+1. "Collatz_Simple.exe": This program is optimized for simplicity and low memory usage.
+
+2."Collatz_Recursive.exe" This Program is optimized for performance by using recursion to calculate the Collatz sequence,
+ thus more memory is used than in main.exe but a reduction in CPU time gained.
+
+ 
+ Github Repo: https://github.com/skaapvisagie/Collatz.git
