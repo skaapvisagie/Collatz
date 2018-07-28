@@ -12,7 +12,7 @@
 //========== init functions ===================
 
 /** Brief:
-*Find_Collatz calculates the next number in the collatz sequence.
+*Find_Collatz recursively calculates the next number in the collatz sequence to optimize processing time.
 *The Max size of any number in the sequence must be smaller than 4 bytes (4294967295 dec).
 *
 *@Param _num 32bit Integer to calculate the next number in the Collatz sequence.
@@ -25,7 +25,6 @@ int Find_Collatz(int _num);
 //=============================================
 
 
-
 int main()
 {
    int Num;
@@ -33,28 +32,31 @@ int main()
     scanf("%d",&Num);  // get number from user
     printf("%d ", Num);// Prints the original number the user entered
 
-    // if Num not 1 then sequence is not complete and next number of the sequence is calculated
-    while(Num != 1)
-    {
-        Num = Find_Collatz(Num);
-        printf("%d ", Num);
-    }
+    //Call Collatz function to calculate and display the sequence
+    Num = Find_Collatz(Num);
 
     printf("\n");
 
-     system("pause"); // Pause program to view output before terminating.
+    system("pause"); // Pause program to view output before terminating.
    return 0;
 }
 
 int Find_Collatz(int _num)
 {
-    if((_num%2) == 0) //check if the current number is even of odd and calculate next number.
-    {
-        _num = _num/2;
-    }else
-     {
-        _num = 3*_num + 1;
-     }
+    if(_num == 1) // if _num is 1 then sequence is finished and returns.
+        return 1;
 
-   return _num;
+    if(_num%2 == 0) // See if the current number is odd or even
+    {
+        _num = _num/2;          // calculate next number
+        printf("%d ", _num);    // display next number
+        Find_Collatz(_num);
+    }
+    else
+     {
+        _num = _num*3 + 1;      // calculate next number
+        printf("%d ", _num);    // display next number
+
+        Find_Collatz(_num);
+     }
 }
