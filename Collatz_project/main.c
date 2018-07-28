@@ -5,43 +5,42 @@
     Date: 26/07/2018
 
 */
-#include "main.h"
-#inculde <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 //========== init functions ===================
-int Find_Collatz(int val);
+int Find_Collatz(int _num);
 //=============================================
 
 //========== Global Variables =================
-int cnt = 0;
+int i = 0;
 //=============================================
 
 int main()
 {
-   int C;
+   int Num;
 
-   scanf(“%d”,&C);
+   scanf("%d",&Num);
 
-    while(C != 1)
+    while(Num != 1)
     {
-        C = Find_Collatz(C);
-        printf("%d", C);
+        Num = Find_Collatz(Num);
+        printf("%d ", Num);
     }
    //printf(“%d”, );
    return 0;
 }
 
-int Find_Collatz(int c)
+int Find_Collatz(int _num)
 {
-    if((c%2) == 0) //check if the current number is even of odd
+    if((_num%2) == 0) //check if the current number is even of odd
     {
-        val=val/2;
+        _num = _num/2;
     }else
      {
-        val=3*val+1;
+        _num = 3*_num + 1;
      }
 
    //cnt++;
-   return val;
+   return _num;
 }
