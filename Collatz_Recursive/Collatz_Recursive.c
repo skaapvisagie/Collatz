@@ -3,7 +3,7 @@
     The Max size of any number in the sequence must be
     Author: Vaughn Sander
     Date: 26/07/2018
-
+	Github Repo: https://github.com/skaapvisagie/Collatz.git
 #############################################################################*/
 
 #include <stdio.h>
